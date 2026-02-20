@@ -28,15 +28,15 @@ const Edit = () => {
         body: JSON.stringify(isEdit),
       },
     );
-    editToast()
-    navigate('/')
+    editToast();
+    navigate("/");
   };
-  let navigate=useNavigate()
+  let navigate = useNavigate();
   return (
     <>
       <div className="from-block">
         <div className="form-top d-flex align-item-center justify-content-between">
-            <h3>Edit Data</h3>
+          <h3>Edit Data</h3>
         </div>
         <form onSubmit={handleupdate}>
           <div className="from-control">

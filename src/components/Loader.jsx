@@ -4,8 +4,8 @@ import { ClipLoader } from "react-spinners";
 const Loader = () => {
   return (
     <>
-      <ClipLoader color="#87d38a"  />
-     </>
+      <ClipLoader color="#87d38a" />
+    </>
   );
 };
 export default Loader;

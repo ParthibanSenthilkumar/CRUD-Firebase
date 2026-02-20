@@ -7,21 +7,21 @@ const Create = () => {
   let [course, setcourse] = useState("");
   let [year, setyear] = useState("");
   let [mail, setmail] = useState("");
-  let [datetime,setDateTime] = useState ("")
+  let [datetime, setDateTime] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      const formattedDate = new Date(datetime).toLocaleString("en-IN", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit"
-  });
+    const formattedDate = new Date(datetime).toLocaleString("en-IN", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
 
-  console.log("Formatted:", formattedDate);
-  
+    console.log("Formatted:", formattedDate);
+
     fetch("https://task-668b3-default-rtdb.firebaseio.com/students.json", {
       method: "POST",
       headers: {
@@ -32,10 +32,10 @@ const Create = () => {
         Course: course,
         year: year,
         mail: mail,
-        datetime:formattedDate
+        datetime: formattedDate,
       }),
     });
-    successToast()
+    successToast();
     setUsername("");
     setcourse("");
     setyear("");
@@ -89,7 +89,7 @@ const Create = () => {
               type="datetime-local"
               value={datetime}
               onChange={(e) => setDateTime(e.target.value)}
-          />
+            />
           </div>
           <button type="submit">Submit</button>
         </form>

@@ -6,19 +6,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Toaster from "./components/Toaster";
 function App() {
   return (
-<BrowserRouter>
-    <Toaster />
-  <Routes>
-    <Route path="/" element={
-      <>
-        <Create />
-        <Read />
-      </>
-    } />
-    <Route path="/edit/:id" element={<Edit />} />
-  </Routes>
-</BrowserRouter>
-
+    <BrowserRouter>
+      <Toaster />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Create />
+              <Read />
+            </>
+          }
+        />
+        <Route path="/edit/:id" element={<Edit />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

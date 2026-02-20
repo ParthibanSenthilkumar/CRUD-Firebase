@@ -23,7 +23,7 @@ const Read = () => {
             ...resData[key],
           });
         }
-        console.log("arryconversion",JSON.stringify(loaduser) );
+        console.log("arryconversion", JSON.stringify(loaduser));
         setuserData(loaduser);
       } catch (error) {
         seterror(error.message);
@@ -55,38 +55,38 @@ const Read = () => {
                 <th>Action</th>
               </tr>
             </thead>
-                <tbody>
-                  {isLoading ? (
-                    <tr>
-                      <td colSpan="6" className="text-center">
-                        <div className="d-flex justify-content-center py-4">
-                          <Loader />
-                        </div>
-                      </td>
-                    </tr>
-                  ) : (
-                    userData.map((user, index) => (
-                      <tr key={user.id}>
-                        <th>{index + 1}</th>
-                        <td>{user.name || user.userName || "--"}</td>
-                        <td>{user.Course || user.course || "--"}</td>
-                        <td>{user.year || "--"}</td>
-                        <td>{user.datetime || "--"}</td>
-                        <td>
-                          <button
-                            className="btn btn-outline-primary m-2"
-                            onClick={() => editHandeler(user.id)}
-                          >
-                            Edit
-                          </button>
-                          <button className="btn btn-outline-danger m-2">
-                            Delete
-                          </button>
-                        </td>
-                      </tr>
-                    ))
-                  )}
-                </tbody>
+            <tbody>
+              {isLoading ? (
+                <tr>
+                  <td colSpan="6" className="text-center">
+                    <div className="d-flex justify-content-center py-4">
+                      <Loader />
+                    </div>
+                  </td>
+                </tr>
+              ) : (
+                userData.map((user, index) => (
+                  <tr key={user.id}>
+                    <th>{index + 1}</th>
+                    <td>{user.name || user.userName || "--"}</td>
+                    <td>{user.Course || user.course || "--"}</td>
+                    <td>{user.year || "--"}</td>
+                    <td>{user.datetime || "--"}</td>
+                    <td>
+                      <button
+                        className="btn btn-outline-primary m-2"
+                        onClick={() => editHandeler(user.id)}
+                      >
+                        Edit
+                      </button>
+                      <button className="btn btn-outline-danger m-2">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
           </table>
         </div>
       </div>

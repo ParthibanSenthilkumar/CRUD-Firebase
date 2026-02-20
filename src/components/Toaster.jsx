@@ -1,21 +1,21 @@
-import React from 'react'
-import { ToastContainer, toast,Bounce } from 'react-toastify';
+import React from "react";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
-export const successToast =()=>{
-    toast.success( "Data sent successfully" )
-}
-export const errorToast=()=>{
-    toast.error('Data not Fetch')
-}
+export const successToast = () => {
+  toast.success("Data sent successfully");
+};
+export const errorToast = () => {
+  toast.error("Data not Fetch");
+};
 
-export const editToast =()=>{
-  toast.success( "Date Updated successfully" )
-}
+export const editToast = () => {
+  toast.success("Date Updated successfully");
+};
 
 const Toaster = () => {
   return (
     <>
-    <ToastContainer
+      <ToastContainer
         position="top-right"
         autoClose={4000}
         hideProgressBar={false}
@@ -27,9 +27,9 @@ const Toaster = () => {
         pauseOnHover
         theme="light"
         transition={Bounce}
-        />
+      />
     </>
-  )
-}
+  );
+};
 
-export default Toaster
+export default Toaster;
