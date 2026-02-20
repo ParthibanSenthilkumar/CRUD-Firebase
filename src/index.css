@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.from-control{
+    margin: 10px 0px;
+}
+.from-control label{
+    font-size: 15px;
+    font-weight: 500;
+    color: #393939;
+}
+.from-control input{
+    width: 100%;
+    margin-top: 5px;
+    padding: 9px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    background: #f5f5f5de;
+}
+.from-block{
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+button{
+    max-width: 130px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #4da54d;
+    color: #fff;
+    margin: 10px 0px;
+}
+table {
+    vertical-align: middle;
+}
