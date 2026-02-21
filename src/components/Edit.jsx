@@ -16,21 +16,43 @@ const Edit = () => {
     };
     updateData();
   }, [id]);
-  let handleupdate = (e) => {
-    e.preventDefault();
-    fetch(
-      `https://task-668b3-default-rtdb.firebaseio.com/students/${id}.json`,
-      {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(isEdit),
-      },
-    );
-    editToast();
-    navigate("/");
+let handleupdate = async (e) => {
+  e.preventDefault();
+
+  const dateObj = new Date(isEdit.datetime);
+
+  let hours = dateObj.getHours();
+  const minutes = dateObj.getMinutes();
+  const ampm = hours >= 12 ? "PM" : "AM";
+
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+
+  const formattedDate = `${String(dateObj.getDate()).padStart(2, "0")}-${String(
+    dateObj.getMonth() + 1
+  ).padStart(2, "0")}-${dateObj.getFullYear()} ${hours}:${String(
+    minutes
+  ).padStart(2, "0")} ${ampm}`;
+
+  const updatedData = {
+    ...isEdit,
+    datetime: formattedDate,
   };
+
+  await fetch(
+    `https://task-668b3-default-rtdb.firebaseio.com/students/${id}.json`,
+    {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedData),
+    }
+  );
+
+  editToast();
+  navigate("/");
+};
   let navigate = useNavigate();
   return (
     <>

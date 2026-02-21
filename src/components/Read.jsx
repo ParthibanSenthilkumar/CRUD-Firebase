@@ -37,7 +37,17 @@ const Read = () => {
   const editHandeler = (id) => {
     navigate(`/edit/${id}`);
   };
-
+  const handleDelete =(id)=>{
+   fetch(`https://task-668b3-default-rtdb.firebaseio.com/students/${id}.json`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      let updataLiist =userData.filter(item => item.id ==! id)
+      setuserData(updataLiist)
+  }
   return (
     <>
       <div className="container">
@@ -79,7 +89,7 @@ const Read = () => {
                       >
                         Edit
                       </button>
-                      <button className="btn btn-outline-danger m-2">
+                      <button className="btn btn-outline-danger m-2" onClick={()=>handleDelete(user.id)}>
                         Delete
                       </button>
                     </td>
